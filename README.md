@@ -26,7 +26,8 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Example Output](https://github.com/adamtaylor13/hoop/blob/master/images/example_output.png)
+
 
 This CLI has a simple purpose: Cleanly and concisely display the status of the configured project's branch in Circle CI
 
