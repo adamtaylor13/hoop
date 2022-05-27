@@ -1,0 +1,51 @@
+{
+  "name": "hoop",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node -r dotenv/config index.ts",
+    "debug": "node --inspect -r ts-node/register -r dotenv/config index.ts",
+    "test": "jest",
+    "watch": "jest --watchAll"
+  },
+  "dependencies": {
+    "@types/node": "^17.0.35",
+    "axios": "^0.27.2",
+    "cli-columns": "^4.0.0",
+    "dayjs": "^1.11.2",
+    "dotenv": "^16.0.1",
+    "eslint": "^8.15.0",
+    "prettier": "^2.6.2",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "embeddedLanguageFormatting": "auto",
+    "htmlWhitespaceSensitivity": "css",
+    "insertPragma": false,
+    "jsxBracketSameLine": false,
+    "jsxSingleQuote": false,
+    "printWidth": 80,
+    "proseWrap": "preserve",
+    "quoteProps": "as-needed",
+    "requirePragma": false,
+    "semi": true,
+    "singleQuote": false,
+    "tabWidth": 4,
+    "trailingComma": "es5",
+    "useTabs": false,
+    "vueIndentScriptAndStyle": false
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.0",
+    "@babel/preset-env": "^7.18.0",
+    "@babel/preset-typescript": "^7.17.12",
+    "@types/jest": "^27.5.1",
+    "babel-jest": "^28.1.0",
+    "jest": "^28.1.0",
+    "ts-jest": "^28.0.3"
+  }
+}
