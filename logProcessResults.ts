@@ -11,6 +11,6 @@ export function logProcessResults(
     console.log(message);
     console.log(`-`.repeat(message.length));
     console.log("\n\n");
-    // TODO: Big message when allow-merge is true
+    // TODO: Big message when some sort of success / finished state is true
     console.log(columns(jobStatusLabels, { sort: false }));
 }
