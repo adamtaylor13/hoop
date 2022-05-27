@@ -1,4 +1,3 @@
-import axios from "axios";
 import { RunConfig } from "./types";
 import { caseSensitiveCompare, sleep } from "./utils";
 import { getPipelines } from "./getPipelines";
@@ -9,11 +8,6 @@ import { logProcessResults } from "./logProcessResults";
 import { shouldExitLoop } from "./shouldExitLoop";
 
 // TODO: Implement blessed: https://badacadabra.github.io/Building-a-visual-form-in-your-terminal-emulator-with-Blessed/
-
-// TODO: Move this to fetch.ts
-axios.defaults.baseURL = "https://circleci.com/api/v2";
-axios.defaults.headers.common["Circle-Token"] = process.env.CIRCLE_API_TOKEN;
-axios.defaults.headers.common["Content-Type"] = `text/plain`;
 
 export async function run({ fetchInterval }: RunConfig) {
     const branch = await currentBranch();

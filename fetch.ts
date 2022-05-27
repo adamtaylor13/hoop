@@ -3,10 +3,13 @@ import {
     CircleAPIJob,
     CircleAPIPipeline,
     CircleAPIWorkflow,
-    Job,
     Pipeline,
     Workflow,
 } from "./types";
+
+axios.defaults.baseURL = "https://circleci.com/api/v2";
+axios.defaults.headers.common["Circle-Token"] = process.env.CIRCLE_API_TOKEN;
+axios.defaults.headers.common["Content-Type"] = `text/plain`;
 
 export async function fetchPipelines(
     branch: string
