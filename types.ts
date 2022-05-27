@@ -24,7 +24,9 @@ export type CircleAPIPipeline = {
         branch: string;
     };
 };
-export type Pipeline = Pick<CircleAPIPipeline, "id"> & { commit: string };
+export type Pipeline = Pick<CircleAPIPipeline, "id" | "number"> & {
+    commit: string;
+};
 export type CircleAPIWorkflow = {
     pipeline_id: string;
     id: string;
@@ -38,6 +40,7 @@ export type CircleAPIWorkflow = {
 };
 export type Workflow = Pick<CircleAPIWorkflow, "id"> & {
     commit: string;
+    pipelineNumber: number;
 };
 export type CircleAPIJob = {
     dependencies: string[];
@@ -50,4 +53,13 @@ export type CircleAPIJob = {
     type: string; // TODO: Maybe enum?
     stopped_at: string | null; // yyyy-mm-ddThh:mm:ss:SSSz
 };
-export type Job = Pick<CircleAPIJob, "name" | "status"> & { commit: string };
+export type Job = Pick<CircleAPIJob, "name" | "status" | "job_number"> & {
+    statusEmoji: string;
+    commit: string;
+    pipeline: {
+        number: number;
+    };
+    workflow: {
+        id: string;
+    };
+};

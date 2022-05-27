@@ -11,10 +11,11 @@ export async function getPipelines(
             (a, b) =>
                 dayjs(b.created_at).valueOf() - dayjs(a.created_at).valueOf()
         )
-        .map(({ id, vcs }: CircleAPIPipeline): Pipeline => {
+        .map(({ id, vcs, number }: CircleAPIPipeline): Pipeline => {
             return {
                 id,
                 commit: vcs?.commit?.subject,
+                number,
             };
         });
 

@@ -6,6 +6,7 @@ import { getWorkflow } from "./getWorkflow";
 import { currentBranch } from "./currentBranch";
 import { logProcessResults } from "./logProcessResults";
 import { shouldExitLoop } from "./shouldExitLoop";
+import { printJobName } from "./printJobName";
 
 // TODO: Implement blessed: https://badacadabra.github.io/Building-a-visual-form-in-your-terminal-emulator-with-Blessed/
 
@@ -20,9 +21,8 @@ export async function run({ fetchInterval }: RunConfig) {
 
         const jobStatusLabels = jobs
             .sort(caseSensitiveCompare)
-            .map((job) => `${job.status} ${job.name}`);
+            .map((job) => `${job.statusEmoji} ${printJobName(job)}`);
 
-        // TODO: Use something like this to print failed jobs: https://www.npmjs.com/package/terminal-link
         logProcessResults(commitMessage, jobStatusLabels);
         await sleep(fetchInterval);
         // istanbul ignore else - Else not important

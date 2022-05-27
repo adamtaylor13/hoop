@@ -17,6 +17,7 @@ export async function getWorkflow(pipeline: Pipeline): Promise<Workflow> {
                 name: workflow.name,
                 status: getEmoji(workflow.status),
                 commit: pipeline.commit,
+                pipelineNumber: pipeline.number,
             };
         })
         .find((workflow) => workflow.name === process.env.WORKFLOW_NAME);

@@ -7,7 +7,8 @@ import {
     Workflow,
 } from "./types";
 
-axios.defaults.baseURL = "https://circleci.com/api/v2";
+const BASE_CIRCLE_API_URL = "https://circleci.com/api/v2";
+axios.defaults.baseURL = BASE_CIRCLE_API_URL;
 axios.defaults.headers.common["Circle-Token"] = process.env.CIRCLE_API_TOKEN;
 axios.defaults.headers.common["Content-Type"] = `text/plain`;
 

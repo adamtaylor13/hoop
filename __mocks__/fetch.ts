@@ -81,6 +81,17 @@ export async function fetchJobsForWorkflow(
                 type: "SOME_TYPE",
                 stopped_at: null,
             },
+            {
+                id: "a549fbd5-1091-4b6e-a79e-b9559b7c4857",
+                job_number: 123,
+                dependencies: [],
+                started_at: "2022-05-26T20:13:31:000Z",
+                name: "Foo Job",
+                project_slug: "/test_slug/",
+                status: "failed",
+                type: "SOME_TYPE",
+                stopped_at: null,
+            },
         ],
     };
 }
