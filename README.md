@@ -6,13 +6,13 @@
 <br />
 <div align="center">
   <a href="https://github.com/adamtaylor13/hoop">
-    <img src="https://github.com/adamtaylor/hoop/images/logo.jpg" alt="Logo" width="800" height="800">
+    <img src="https://github.com/adamtaylor13/hoop/blob/master/images/logo.jpg" alt="Logo" width="200" height="200">
     <!-- Generated using artifical intelligence at: https://creator.nightcafe.studio -->
   </a>
 
-<h3 align="center">Hoops</h3>
+<h3 align="center">Hoop</h3>
   <p align="center">
-    Hoops is a lightweight CLI for seeing your current project's Circle CI status
+    Hoop is a lightweight CLI for seeing your current project's Circle CI status
     <!-- 
     <a href="https://github.com/adamtaylor13/hoop">View Demo</a>
     ·
