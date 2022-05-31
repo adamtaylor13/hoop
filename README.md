@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/adamtaylor13/hoop">
-    <img src="https://github.com/adamtaylor13/hoop/blob/master/images/logo.jpg" alt="Logo" width="200" height="200">
+    <img src="https://github.com/adamtaylor13/hoop/blob/master/images/logo.svg" alt="Logo" width="300" height="150">
     <!-- Generated using artifical intelligence at: https://creator.nightcafe.studio -->
   </a>
 
