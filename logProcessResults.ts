@@ -7,10 +7,13 @@ export function logProcessResults(
     console.clear();
 
     let message = `Job for:\n${commitMessage}`;
-    console.log(`-`.repeat(message.length));
+    let messageDelimiter = `-`.repeat(message.length);
+
+    console.log(messageDelimiter);
     console.log(message);
-    console.log(`-`.repeat(message.length));
+    console.log(messageDelimiter);
     console.log("\n\n");
+
     // TODO: Big message when some sort of success / finished state is true
     console.log(columns(jobStatusLabels, { sort: false }));
 }
