@@ -3,13 +3,20 @@
 export type RunConfig = {
     fetchInterval: number;
 };
+export const CircleAPIPipelineState = [
+    "created",
+    "errored",
+    "setup-pending",
+    "setup",
+    "pending",
+] as const;
 export type CircleAPIPipeline = {
     id: string; // uuid
     errors: string[];
     project_slug: string;
     updated_at: string; // yyyy-mm-ddThh:mm:ss:SSSz
     number: number; // not sure what this is
-    state: string; // TODO: This could be an enum maybe or a string union
+    state: typeof CircleAPIPipelineState[number];
     created_at: string; // yyyy-mm-ddThh:mm:ss:SSSz
     // trigger: {};
     vcs: {
@@ -27,12 +34,23 @@ export type CircleAPIPipeline = {
 export type Pipeline = Pick<CircleAPIPipeline, "id" | "number"> & {
     commit: string;
 };
+export const CircleApiWorkflowStatus = [
+    "success",
+    "running",
+    "not_run",
+    "failed",
+    "error",
+    "failing",
+    "on_hold",
+    "canceled",
+    "unauthorized",
+] as const;
 export type CircleAPIWorkflow = {
     pipeline_id: string;
     id: string;
     name: string;
     project_slug: string;
-    status: string;
+    status: typeof CircleApiWorkflowStatus[number];
     started_by: string; // yyyy-mm-ddThh:mm:ss:SSSz
     created_at: string; // yyyy-mm-ddThh:mm:ss:SSSz
     stopped_at: string | null; // yyyy-mm-ddThh:mm:ss:SSSz
@@ -50,7 +68,7 @@ export type CircleAPIJob = {
     name: string;
     project_slug: string;
     status: string;
-    type: string; // TODO: Maybe enum?
+    type: string; // Verifying with the Circle CI team: https://github.com/circleci/circleci-docs/issues/6874
     stopped_at: string | null; // yyyy-mm-ddThh:mm:ss:SSSz
 };
 export type Job = Pick<CircleAPIJob, "name" | "status" | "job_number"> & {
