@@ -4,7 +4,7 @@ export const STATUS_EMOJI = {
     not_running: "🔄",
     blocked: "⏸ ",
     canceled: "➖ ",
-    running: "▶️ ",
+    running: "⏱ ",
     failed: "⛔️",
 };
 
