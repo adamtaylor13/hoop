@@ -12,7 +12,7 @@ import { printJobName } from "./printJobName";
 
 export async function run({ fetchInterval }: RunConfig) {
     const branch = await currentBranch();
-    // @ts-ignore
+    // @ts-ignore -- TODO: Document what/why we do this
     Error.prototype.branch = branch;
     while (true) {
         const { pipeline, commitMessage } = await getPipelines(branch);
