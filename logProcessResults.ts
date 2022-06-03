@@ -4,6 +4,8 @@ export function logProcessResults(
     commitMessage: string,
     jobStatusLabels: string[]
 ) {
+    console.clear();
+
     let message = `Job for:\n${commitMessage}`;
     let messageDelimiter = `-`.repeat(message.length);
     let content = `${messageDelimiter}\n${message}\n${messageDelimiter}`;
