@@ -1,4 +1,4 @@
-import { status } from "./stdout/status";
+import columns from "cli-columns";
 
 export function logProcessResults(
     commitMessage: string,
@@ -7,7 +7,8 @@ export function logProcessResults(
     let message = `Job for:\n${commitMessage}`;
     let messageDelimiter = `-`.repeat(message.length);
     let content = `${messageDelimiter}\n${message}\n${messageDelimiter}`;
+    console.log(content);
 
-    // TODO: Big message when some sort of success / finished state is true
-    status.render(content, jobStatusLabels);
+    // TODO: Some sort of success / finished state is true
+    console.log(columns(jobStatusLabels, { sort: false }));
 }

@@ -12,7 +12,7 @@
   "dependencies": {
     "@types/node": "^17.0.35",
     "axios": "^0.27.2",
-    "blessed": "^0.1.81",
+    "cli-columns": "^4.0.0",
     "dayjs": "^1.11.2",
     "dotenv": "^16.0.1",
     "eslint": "^8.15.0",

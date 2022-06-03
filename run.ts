@@ -8,8 +8,6 @@ import { logProcessResults } from "./logProcessResults";
 import { shouldExitLoop } from "./shouldExitLoop";
 import { printJobName } from "./printJobName";
 
-// TODO: Implement blessed: https://badacadabra.github.io/Building-a-visual-form-in-your-terminal-emulator-with-Blessed/
-
 export async function run({ fetchInterval }: RunConfig) {
     const branch = await currentBranch();
     // @ts-ignore -- TODO: Document what/why we do this
