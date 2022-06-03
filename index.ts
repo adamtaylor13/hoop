@@ -1,6 +1,7 @@
 // istanbul ignore file - All tests for this are in run.ts
 import { run } from "./run";
 import { NoWorkflowError } from "./getWorkflow";
+import { parseArgs } from "./parseArgs";
 
 function viewBranch(error) {
     if (error.branch) {
@@ -23,8 +24,10 @@ process.on("unhandledRejection", function (error) {
 });
 
 try {
+    const args = parseArgs();
     run({
         fetchInterval: 5,
+        ...args,
     });
 } catch (error) {
     if (error instanceof NoWorkflowError) {

@@ -99,6 +99,35 @@ it's for monitoring, and to that end, there's no reason for it.
 The goal behind this project is to easily monitor your CircleCI pipeline's status as you push 
 / modify your branch.
 
+### Comand line arguments
+
+`--pipelineIndex=N`
+
+This arg defines some index (`N`) to look backwards for pipelines. For example, if you're running your current pipeline,
+but want to see which tests failed on the previous pipeline's run, you can run:
+
+```shell
+yarn start --pipelineIndex=1
+```
+
+This will run the 2nd most recent pipeline.
+
+### Tips & Tricks
+
+You can further extend this by leveraging a bash script to access this script from any location on your system. For example,
+I use the following function source'd into my bash_profile:
+
+```shell
+function hoop() {
+    startingPath=$(pwd)
+    debug "Starting at: ${startingPath}"
+    cd ~/path/to/hoop
+    yarn start --pipelineIndex="${1}"
+    debug "Navigating back to ${startingPath}"
+    cd "${startingPath}"
+}
+```
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 

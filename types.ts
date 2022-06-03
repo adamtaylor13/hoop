@@ -1,6 +1,8 @@
 // istanbul ignore file - No point in testing types
 
-export type RunConfig = {
+import { CliArgs } from "./parseArgs";
+
+export type RunConfig = CliArgs & {
     fetchInterval: number;
 };
 export const CircleAPIPipelineState = [

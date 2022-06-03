@@ -8,12 +8,15 @@ import { logProcessResults } from "./logProcessResults";
 import { shouldExitLoop } from "./shouldExitLoop";
 import { printJobName } from "./printJobName";
 
-export async function run({ fetchInterval }: RunConfig) {
+export async function run({ fetchInterval, pipelineIndex }: RunConfig) {
     const branch = await currentBranch();
     // @ts-ignore -- TODO: Document what/why we do this
     Error.prototype.branch = branch;
     while (true) {
-        const { pipeline, commitMessage } = await getPipelines(branch);
+        const { pipeline, commitMessage } = await getPipelines(
+            branch,
+            pipelineIndex
+        );
         const workflow = await getWorkflow(pipeline);
         const jobs = await getJobsForWorkflow(workflow);
 
