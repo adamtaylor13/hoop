@@ -69,8 +69,22 @@ export type CircleAPIJob = {
     started_at: string; // yyyy-mm-ddThh:mm:ss:SSSz
     name: string;
     project_slug: string;
-    status: string;
-    type: string; // Verifying with the Circle CI team: https://github.com/circleci/circleci-docs/issues/6874
+    type: string;
+    status:
+        | "success"
+        | "running"
+        | "not_run"
+        | "failed"
+        | "retried"
+        | "queued"
+        | "not_running"
+        | "infrastructure_fail"
+        | "timedout"
+        | "on_hold"
+        | "terminated-unknown"
+        | "blocked"
+        | "canceled"
+        | "unauthorized";
     stopped_at: string | null; // yyyy-mm-ddThh:mm:ss:SSSz
 };
 export type Job = Pick<CircleAPIJob, "name" | "status" | "job_number"> & {
