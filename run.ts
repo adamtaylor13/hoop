@@ -24,6 +24,12 @@ export async function run({ fetchInterval, pipelineIndex }: RunConfig) {
             .sort(caseSensitiveCompare)
             .map((job) => `${job.statusEmoji} ${printJobName(job)}`);
 
+        // TODO: Make this part of a plugin-system which defines something we
+        //  can do with the process results.
+        //  example: Log the results (as we do now)
+        //  example: On success (whatever that looks like) do something else
+        //  perhaps we also allow the plugins to define "shouldExitLoop" programmatically?
+        //  Unsure what that looks like for now.
         logProcessResults(commitMessage, jobStatusLabels);
         await sleep(fetchInterval);
         // istanbul ignore else - Else not important
